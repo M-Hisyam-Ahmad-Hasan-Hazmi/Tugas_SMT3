@@ -48,5 +48,3 @@ var totalPembayaran = uangJasa + uangKomisi;
 console.log("Uang Jasa: Rp. " + uangJasa);
 console.log("Uang Komisi: Rp. " + uangKomisi);
 console.log("Total Pembayaran: Rp. " + totalPembayaran);
-
-
