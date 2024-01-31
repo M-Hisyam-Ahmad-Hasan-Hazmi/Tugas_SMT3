@@ -1,0 +1,48 @@
+
+1. Buat direktori untuk proyek dan masuk ke dalamnya:
+
+mkdir middleware-example
+cd middleware-example
+
+
+2. Inisialisasi proyek Node.js dan instalasi modul `express`:
+
+npm init -y
+npm install express
+
+3. Buat file `app.js` dan tambahkan kode berikut:
+
+const express = require('express');
+const app = express();
+
+// Middleware pertama: mencatat waktu permintaan
+app.use((req, res, next) => {
+    console.log('Request Time:', new Date());
+    next(); // Lanjutkan ke middleware berikutnya
+});
+
+// Middleware kedua: menambahkan header ke respons
+app.use((req, res, next) => {
+    res.setHeader('X-Powered-By', 'Express');
+    next(); // Lanjutkan ke middleware berikutnya
+});
+
+// Route utama
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+// Mulai server
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server berjalan di port ${PORT}`);
+});
+
+
+4. Jalankan aplikasi dengan menjalankan file `app.js`:
+
+node app.js
+
+5. Buka browser dan akses `http://localhost:3000`. Anda akan melihat pesan "Hello, World!" di dalam halaman, dan di terminal, Anda akan melihat catatan waktu permintaan.
+
+Dengan ini, Anda telah membuat dan menjalankan aplikasi Node.js sederhana yang menggunakan dua buah middleware untuk melakukan tugas tertentu (mencatat waktu permintaan dan menambahkan header ke respons). Middleware digunakan untuk memodifikasi atau memanipulasi permintaan HTTP saat melewati aplikasi Anda sebelum sampai ke tujuan akhir.
