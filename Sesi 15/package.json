@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "jest": "^29.7.0",
+    "prisma": "^5.9.0",
+    "supertest": "^6.3.4"
+  }
+}
