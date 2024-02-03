@@ -1,0 +1,99 @@
+### 
+
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "Hisyamhazmi",
+  "password" : "rahasia",
+  "name" : "Bayu Putra"
+}
+
+### Log In User
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "Hisyamhazmi",
+  "password" : "rahasia"
+}
+
+### Get User
+
+GET http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: c2971b63-c73e-43c4-8690-92b74c7bf1e0
+
+### Update User
+
+PATCH http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: d6022c24-5245-428d-9f26-7ed46f7d5679
+
+{
+  "name" : "raihan nanda"
+}
+
+### Delete User
+
+DELETE http://localhost:3000/api/users/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: 344cedc3-1472-4f69-bc00-6ae8eaa8535e
+
+### Create book
+
+POST http://localhost:3000/api/books
+Content-Type: application/json
+Accept: application/json
+Authorization: f91fbb04-a272-44d2-bd62-a427f79203ae
+
+{
+  "title": "Habis Gelap Terbitlah terang",
+  "penulis": "K.H. Agus Salim",
+  "deskripsi": "Habis Gelap Terbitlah Terang adalah...",
+  "tahunterbit": "1927",
+  "kategori": "Buku Motivas",
+  "penerbit": "Gramedia Pustaka Utama"
+}
+
+### List
+
+GET http://localhost:3000/api/books
+Content-Type: application/json
+Accept: application/json
+Authorization:f91fbb04-a272-44d2-bd62-a427f79203ae
+
+### Get
+
+GET http://localhost:3000/api/books/2
+Content-Type: application/json
+Accept: application/json
+Authorization:f91fbb04-a272-44d2-bd62-a427f79203ae
+
+### Update
+
+PUT http://localhost:3000/api/books/2
+Content-Type: application/json
+Accept: application/json
+Authorization: f91fbb04-a272-44d2-bd62-a427f79203ae
+
+{
+  "title": "Habis Gelap Terbitlah terang",
+  "penulis": "K.H. Agus Salim",
+  "deskripsi": "Habis Gelap Terbitlah Terang adalah...",
+  "tahunterbit": "1927",
+  "kategori": "Buku Motivas",
+  "penerbit": "Gramedia Pustaka Utama"
+}
+### Delete 
+
+DELETE http://localhost:3000/api/books/2
+Content-Type: application/json
+Accept: application/json
+Authorization: f91fbb04-a272-44d2-bd62-a427f79203ae
